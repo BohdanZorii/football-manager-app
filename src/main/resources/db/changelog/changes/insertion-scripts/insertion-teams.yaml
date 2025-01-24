@@ -1,0 +1,52 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-teams
+      author: bohdan_zorii
+      changes:
+        - insert:
+            tableName: teams
+            columns:
+              - column:
+                  name: id
+                  value: "d18e5f29-13a9-4db4-9339-184f3a2b93e1"
+              - column:
+                  name: name
+                  value: "FC Barcelona"
+              - column:
+                  name: budget
+                  value: "500000000.00"
+              - column:
+                  name: commission_rate
+                  value: "0.05"
+
+        - insert:
+            tableName: teams
+            columns:
+              - column:
+                  name: id
+                  value: "f0b38e9f-4877-48ae-9266-d2cc0f5e9c4e"
+              - column:
+                  name: name
+                  value: "Real Madrid"
+              - column:
+                  name: budget
+                  value: "600000000.00"
+              - column:
+                  name: commission_rate
+                  value: "0.06"
+
+        - insert:
+            tableName: teams
+            columns:
+              - column:
+                  name: id
+                  value: "13f79f5b-27e4-48ba-bf28-75941f5bbd2b"
+              - column:
+                  name: name
+                  value: "Manchester United"
+              - column:
+                  name: budget
+                  value: "400000000.00"
+              - column:
+                  name: commission_rate
+                  value: "0.04"

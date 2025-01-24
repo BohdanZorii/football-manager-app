@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: insert-players
+      author: bohdan_zorii
+      changes:
+        - insert:
+            tableName: players
+            columns:
+              - column:
+                  name: id
+                  value: "1eac2f6f-cfbe-4b39-b0f3-79ef91c2b539"
+              - column:
+                  name: name
+                  value: "Lionel Messi"
+              - column:
+                  name: age
+                  value: "35"
+              - column:
+                  name: experience_in_months
+                  value: "180"
+              - column:
+                  name: team_id
+                  value: "d18e5f29-13a9-4db4-9339-184f3a2b93e1"  #FC Barcelona
+
+        - insert:
+            tableName: players
+            columns:
+              - column:
+                  name: id
+                  value: "fa76f572-6bc6-47fc-8b8a-9535c6b7d7c6"
+              - column:
+                  name: name
+                  value: "Cristiano Ronaldo"
+              - column:
+                  name: age
+                  value: "37"
+              - column:
+                  name: experience_in_months
+                  value: "192"
+              - column:
+                  name: team_id
+                  value: "f0b38e9f-4877-48ae-9266-d2cc0f5e9c4e"  #Real Madrid
+
+        - insert:
+            tableName: players
+            columns:
+              - column:
+                  name: id
+                  value: "e72c4c99-75c1-4b3b-9f5a-ec72d66bb6fa"
+              - column:
+                  name: name
+                  value: "Marcus Rashford"
+              - column:
+                  name: age
+                  value: "26"
+              - column:
+                  name: experience_in_months
+                  value: "120"
+              - column:
+                  name: team_id
+                  value: "13f79f5b-27e4-48ba-bf28-75941f5bbd2b"  #Manchester United
