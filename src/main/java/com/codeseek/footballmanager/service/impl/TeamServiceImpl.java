@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -28,7 +29,6 @@ public class TeamServiceImpl implements TeamService {
     @Override
     public TeamResponseDto getTeamById(UUID id) {
         Team team = findById(id);
-
         return teamMapper.toResponseDto(team);
     }
 
@@ -38,6 +38,7 @@ public class TeamServiceImpl implements TeamService {
         return teamMapper.toResponseDtoList(teams);
     }
 
+    @Transactional
     @Override
     public TeamResponseDto updateTeam(UUID id, TeamRequestDto teamRequestDto) {
         Team team = findById(id);
@@ -54,8 +55,8 @@ public class TeamServiceImpl implements TeamService {
 
     @Override
     public Team findById(UUID id) {
-        return teamRepository.findById(id).orElseThrow(
-            () -> new EntityNotFoundException("Team not found by id " + id));
+        return teamRepository.findById(id).orElseThrow(()
+            -> new EntityNotFoundException("Team not found by id " + id));
     }
 
     @Override

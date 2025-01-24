@@ -63,16 +63,14 @@ public class TransferServiceImpl implements TransferService {
         return transferMapper.toResponseDto(transfer);
     }
 
-    @Transactional
     @Override
     public void deleteTransfer(UUID id) {
-        Transfer transfer = findById(id);
-        transferRepository.delete(transfer);
+        transferRepository.deleteById(id);
     }
 
     private Transfer findById(UUID id) {
-        return transferRepository.findById(id)
-            .orElseThrow(() -> new EntityNotFoundException("Transfer not found by id " + id));
+        return transferRepository.findById(id).orElseThrow(()
+            -> new EntityNotFoundException("Transfer not found by id " + id));
     }
 
     private void validateTransfer(Player player, Team toTeam, BigDecimal totalCost) {
