@@ -17,7 +17,7 @@
    This command will build the Docker images and start the containers for both application and database.
 
 
-   **Note:**  This may take close to 2 minutes due to dependencies loading.
+   **Note:**  This may take several minutes due to dependencies loading.
 
 
    Meantime, you can set up Postman collection.
