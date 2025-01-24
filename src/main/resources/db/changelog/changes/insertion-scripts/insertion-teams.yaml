@@ -17,7 +17,7 @@ databaseChangeLog:
                   value: "500000000.00"
               - column:
                   name: commission_rate
-                  value: "0.05"
+                  value: "5"
 
         - insert:
             tableName: teams
@@ -33,7 +33,7 @@ databaseChangeLog:
                   value: "600000000.00"
               - column:
                   name: commission_rate
-                  value: "0.06"
+                  value: "6"
 
         - insert:
             tableName: teams
@@ -49,4 +49,4 @@ databaseChangeLog:
                   value: "400000000.00"
               - column:
                   name: commission_rate
-                  value: "0.04"
+                  value: "4"
