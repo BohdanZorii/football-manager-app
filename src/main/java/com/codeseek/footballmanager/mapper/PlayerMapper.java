@@ -21,5 +21,7 @@ public interface PlayerMapper {
 
     List<PlayerResponseDto> toResponseDtoList(List<Player> players);
 
-    void updatePlayerFromDto(PlayerRequestDto dto, @MappingTarget Player player);
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "name", source = "dto.name")
+    void updatePlayerFromDto(PlayerRequestDto dto, Team team, @MappingTarget Player player);
 }

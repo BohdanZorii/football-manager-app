@@ -2,6 +2,7 @@ package com.codeseek.footballmanager.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -33,7 +34,7 @@ public class Team {
     @Column(nullable = false)
     private double commissionRate;
 
-    @OneToMany(mappedBy = "team")
+    @OneToMany(mappedBy = "team", fetch = FetchType.LAZY)
     @EqualsAndHashCode.Exclude
     private List<Player> players;
 }

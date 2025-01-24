@@ -50,8 +50,9 @@ public class PlayerServiceImpl implements PlayerService {
     @Override
     public PlayerResponseDto updatePlayer(UUID id, PlayerRequestDto playerRequestDto) {
         Player player = findById(id);
+        Team team = teamService.findById(playerRequestDto.teamId());
 
-        playerMapper.updatePlayerFromDto(playerRequestDto, player);
+        playerMapper.updatePlayerFromDto(playerRequestDto, team, player);
         playerRepository.save(player);
         return playerMapper.toResponseDto(player);
     }
