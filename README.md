@@ -15,7 +15,12 @@
    docker-compose up --build
    ```
    This command will build the Docker images and start the containers for both application and database.
-   **Note** This may take close to 2 minutes due to dependencies loading. Meantime, you can set up Postman collection.
+
+
+   **Note:**  This may take close to 2 minutes due to dependencies loading.
+
+
+   Meantime, you can set up Postman collection.
 
 ### Testing
 After starting the application, you can explore and test the API endpoints using Postman Collection.
