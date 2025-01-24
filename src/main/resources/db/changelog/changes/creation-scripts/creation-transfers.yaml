@@ -1,0 +1,57 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-transfers-table
+      author: bohdan_zorii
+      changes:
+        - createTable:
+            tableName: transfers
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: player_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: from_team_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: to_team_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transfer_amount
+                  type: numeric(19, 2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: commission
+                  type: numeric(19, 2)
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: transfers
+            baseColumnNames: player_id
+            referencedTableName: players
+            referencedColumnNames: id
+            constraintName: fk_transfers_player_id
+        - addForeignKeyConstraint:
+            baseTableName: transfers
+            baseColumnNames: from_team_id
+            referencedTableName: teams
+            referencedColumnNames: id
+            constraintName: fk_transfers_from_team_id
+        - addForeignKeyConstraint:
+            baseTableName: transfers
+            baseColumnNames: to_team_id
+            referencedTableName: teams
+            referencedColumnNames: id
+            constraintName: fk_transfers_to_team_id

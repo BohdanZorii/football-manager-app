@@ -1,5 +1,6 @@
 package com.codeseek.footballmanager.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,15 +21,22 @@ public class Transfer {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
+
     @ManyToOne
-    @JoinColumn(name = "player_id")
+    @JoinColumn(name = "player_id", nullable = false)
     private Player player;
+
     @ManyToOne
-    @JoinColumn(name = "from_team_id")
+    @JoinColumn(name = "from_team_id", nullable = false)
     private Team fromTeam;
+
     @ManyToOne
-    @JoinColumn(name = "to_team_id")
+    @JoinColumn(name = "to_team_id", nullable = false)
     private Team toTeam;
+
+    @Column(nullable = false)
     private BigDecimal transferAmount;
+
+    @Column(nullable = false)
     private BigDecimal commission;
 }
