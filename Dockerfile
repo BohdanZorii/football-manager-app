@@ -1,9 +1,13 @@
 # Builder stage
-FROM openjdk:17-jdk-alpine as builder
-WORKDIR application
+FROM maven:3.8.8-openjdk-17 as builder
+WORKDIR /application
+COPY pom.xml .
+COPY src ./src
+RUN mvn clean package -DskipTests
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
+
 
 # Final stage
 FROM openjdk:17-jdk-alpine
