@@ -8,7 +8,7 @@
    ```
 3. Navigate to the project directory:
    ```
-   cd car-sharing-service
+   cd football-manager-app
    ```
 4. Build and start the containers using Docker Compose:
    ```
