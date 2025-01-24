@@ -2,11 +2,12 @@ package com.codeseek.footballmanager.dto.team;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public record TeamRequestDto(
-    @NotNull(message = "Team name cannot be null")
+    @NotBlank(message = "Team name cannot be blank")
     @Size(min = 2, max = 100, message = "Team name should be between 2 and 100 characters")
     String name,
     @Min(value = 0, message = "Budget cannot be negative")
