@@ -5,7 +5,6 @@ databaseChangeLog:
       file: db/changelog/changes/creation-scripts/creation-players.yaml
   - include:
       file: db/changelog/changes/creation-scripts/creation-transfers.yaml
-
   - include:
       file: db/changelog/changes/insertion-scripts/insertion-teams.yaml
   - include:
